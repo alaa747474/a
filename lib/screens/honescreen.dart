@@ -1,9 +1,11 @@
 import 'package:apiurl/models/User.dart';
+
 import 'package:apiurl/screens/userinfo.dart';
 import 'package:apiurl/screens/card.dart';
 import 'package:apiurl/services/userService.dart';
 import 'package:apiurl/functions.dart';
 import 'package:flutter/material.dart';
+
 
 class UsersScreen extends StatefulWidget {
   @override
@@ -11,7 +13,7 @@ class UsersScreen extends StatefulWidget {
 }
 
 class _UsersScreenState extends State<UsersScreen> {
-  List<User> users = [];
+  List <User> users = [];
   getUserList() async {
     users = await UserService().getUsers();
 

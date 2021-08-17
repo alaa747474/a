@@ -1,6 +1,8 @@
 import 'package:apiurl/models/User.dart';
+
 import 'package:apiurl/screens/card.dart';
 import 'package:apiurl/functions.dart';
+import 'package:apiurl/screens/googlemap.dart';
 
 import 'package:flutter/material.dart';
 
@@ -80,7 +82,39 @@ class _UserDetailsState extends State<UserDetails> {
                   "Site : ${widget.user.website}",
                   style: TextStyle(color: Colors.white, fontSize: 20),
                 ))),
-          )
+          ), 
+
+SizedBox(height: 10,),
+           InkWell(
+            onTap: () {
+              pushPage(
+                  context,
+                  MapSample(
+                    userLoaction: widget.user.address.geo,
+                  ));
+            },
+            child: Container(
+                decoration: BoxDecoration(
+                    color: Colors.teal[400],
+                    borderRadius: BorderRadius.circular(15)),
+                width: MediaQuery.of(context).size.width * 0.8,
+                height: 70,
+                child: Center(
+                    child: Text(
+                  "LOCATION",
+                  style: TextStyle(color: Colors.white, fontSize: 20),
+                ))),
+          ),
+          /*  MaterialButton(
+            onPressed: () {
+              pushPage(
+                  context,
+                  MapSample(
+                    userLoaction: widget.user.address.geo,
+                  ));
+            },
+            child: Text("Map view"),
+          )*/
         ],
       ),
     );
